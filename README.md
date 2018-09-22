@@ -1,2 +1,2 @@
 # Desktop-Animation
-This Processing program make an inspirated screen whit snow
+You need to open All the two program in Processing
