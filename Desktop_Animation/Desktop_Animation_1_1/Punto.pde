@@ -36,9 +36,9 @@ class Punto{
   void contact(){
     float distanza = sqrt(pow(posx - mouseX,2) + pow(posy - mouseY, 2));
     if(distanza <= Area){
-      float R = 255;  //trovare una formula che mi permetta di avere un color = al background con A = distanza, mentre color = bianco quando la distanza é minima dal punto
-      float G = 255;
-      float B = 255;
+      float R = (Area-distanza)*(255)/Area;  
+      float G = 127+((Area-distanza)*(255-127))/Area;
+      float B = 209+((Area-distanza)*(255-209))/Area;  //piú mi avvicino al punto e piú la linea é bianca, piú mi allontano e piú é opaca
       stroke(R,G,B);  //Rmax = 0, Gmax = 127, B = 209
       //print(R + " "+ G+ " "+ B+ " "); 
       line(posx,posy,mouseX,mouseY);  
