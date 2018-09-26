@@ -55,9 +55,7 @@ class Punto{
     }
   }
   
-  void attract(){
-    
-    
+  void attract(){ 
   ////____________________________________________
   //  float m = ((mouseY - posy)/(mouseX - posx)); //coefficiente angolare assoluto
   //  if (m < 0){
@@ -69,15 +67,25 @@ class Punto{
   //  float y = (sin(atan(m)*180/PI))*vel;  //spostamento y fa posy
   ////____________________________________________
   
-  float a = vel / sqrt(pow(mouseX-posx,2) + pow(mouseY-posy,2));  //RICORDA: la soluzione é la moltiplicazione dei vettori
-  float x = abs(posx-mouseX)*a;
-  float y = abs(posy - mouseY)*a;
+    float a = vel / sqrt(pow(mouseX - posx,2) + pow(mouseY - posy,2));  //RICORDA: la soluzione é la moltiplicazione dei vettori
+    float x = abs(posx - mouseX)*a;
+    float y = abs(posy - mouseY)*a;
   
     float distance = sqrt(pow(mouseX - posx,2) + pow(mouseY - posy,2));
     
     if(distance <= vel){
       posx = mouseX;
       posy = mouseY;
+    }
+    else { 
+      if(mouseX > posx)
+        posx += x;
+      else
+        posx -= x;
+      if(mouseY > posy)
+        posy += y; 
+      else
+        posy -= y;
     }
     //---------------------------
     //else if(posy == mouseY && posx != mouseX){    //retta orizzontale
@@ -97,21 +105,7 @@ class Punto{
     //    posy += vel;
     //  }
     //}
-    //--------------------------
-    else { //retta obliqua
-     // if( sqrt(pow(x + posx - mouseX,2) + pow(y + posy - mouseY, 2))<sqrt(pow(posx - mouseX,2) + pow(posy - mouseY, 2)) ){
-        if(mouseX > posx )
-          posx +=x;
-        else
-          posx -=x;
-        if(mouseY > posy)
-          posy += y; 
-        else
-          posy -= y;
-     // }
-    }
-
-    
+    //-------------------------
   }
   
 }
