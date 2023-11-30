@@ -1,5 +1,5 @@
 # Desktop-Animation
-You need to open All the two program in Processing
+You need to open the two source files in Processing
 
 v 1.1
 
